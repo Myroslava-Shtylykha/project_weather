@@ -1,0 +1,78 @@
+.container {
+    background: radial-gradient(circle at 10% 20%, rgb(148, 241, 246) 0%, rgb(148, 189, 246) 100.7%);
+    border-radius: 15px;
+    font-family: 'Arima', cursive;
+}
+
+form {
+    margin: 30px;
+    text-align: right;
+}
+
+#city {
+    margin-top: 20px;
+    border-radius: 4px;
+    border-color: rgb(146, 185, 236);
+}
+
+.current_data {
+    margin-bottom: -110px;
+}
+
+.current_city {
+     color: rgb(7, 118, 203);
+    font-size: 120px;
+    margin-left: 40px;
+}
+
+.degrees_now {
+    font-size: 45px;
+    color: rgb(7, 118, 203);
+    margin-left: 40px;
+}
+
+.degree_icon {
+     color: rgb(7, 118, 203);
+     font-size: 20px;
+     margin: -60px 30px 35px 95px;
+}
+
+.search, .searchGeo {
+    border-radius: 4px;
+    border-color: rgb(146, 185, 236);
+    background-color:#ffff;
+    color: rgb(25, 84, 221);
+}
+
+.card_today {
+    position:relative;
+    margin-top: -80px;
+    margin-left: 400px;
+}
+
+.card_future {
+    position:relative;
+    margin: 50px 0;
+}
+
+.col-2  {
+    text-align: center;
+}
+
+.col-4  {
+    text-align: center;
+}
+
+.text-info .card-title {
+    color: rgb(7, 118, 203);
+}
+
+.day_time {
+    margin-left: 40px;
+    color: rgb(7, 118, 203);
+    font-size: 18px;
+}
+
+#icon_celsius, #icon_fahrenheit {
+    text-decoration: none;
+}
