@@ -76,3 +76,13 @@ form {
 #icon_celsius, #icon_fahrenheit {
     text-decoration: none;
 }
+
+.github_Link {
+    font-size: 12px;
+    color: rgb(94, 145, 172);
+}
+.github_Link a {
+     color: rgb(0, 166, 199);
+     text-decoration: none;
+}
+
