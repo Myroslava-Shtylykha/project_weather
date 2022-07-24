@@ -23,53 +23,58 @@
 <div class="current_data">
     <div class="current_city">
         <h1 id="city_now">
-            Lisboa
+            Sydney
         </h1>
     </div> 
     <div class="degrees_now">
             25
     </div>
     <div class="degree_icon">
-        <a href="#" id="icon_celsius">°C</a> |
+        <a href="#" id="icon_celsius" class="">°C</a> |
         <a href="#" id="icon_fahrenheit">°F</a>
     </div>
 
     <p class="day_time">
         Sunday 12:00
     </p>
+    <div class="description"></div>
 </div>
 <div class="card_today">
   <div class="row">
 
      <div class="col-4">
-            <div class="card" style="width: 8rem;">
+            <div class="card" style="width: 9rem;">
                 <div class="card-body">
                     <h5 class="card-title">Wind</h5>
-                    <p class="card-text">3 m/s</p>
+                    <p class="card-text"><span id="wind_card"></span> m/s</p>
                 </div> 
             </div>
         </div>
 
                 
         <div class="col-4">
-            <div class="card" style="width: 8rem;">
+            <div class="card" style="width: 9rem;">
                 <div class="card-body">
-                    <h5 class="card-title">UV</h5>
-                    <p class="card-text">7</p>
+                    <h5 class="card-title">Pressure</h5>
+                    <p class="card-text"><span id="pressure_card"></span> Pa</p>
                 </div>
             </div>
         </div>
 
         <div class="col-4">
-            <div class="card" style="width: 8rem;">
+            <div class="card" style="width: 9rem;">
                 <div class="card-body">
-                     <h5 class="card-title">Humidly</h5>
-                     <p class="card-text">39%</p>
+                     <h5 class="card-title">Humidity</h5>
+                     <p class="card-text"> <span id="humidity_card"></span> %</p>
                 </div>
             </div>
         </div>
   </div>
   </div>
+   <div>
+    <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Clouds" id="icon">
+   </div>
+
 
   <br />
 
