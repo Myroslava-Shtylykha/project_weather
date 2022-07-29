@@ -61,9 +61,14 @@ form {
     margin-left: 400px;
 }
 
-.card_future {
-    position:relative;
-    margin: 50px 0;
+.weather_future {
+    text-align: center;
+    margin-left: -30px;
+    padding-bottom: 20px;
+}
+
+.temperature_future_min {
+    opacity: 0.5;
 }
 
 .col-2  {
