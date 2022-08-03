@@ -153,6 +153,16 @@ button.addEventListener("click", getTemp);
 
 
 
+
+
+
+
+
+
+
+
+
+
  /*Fahr/Cels
 
 function changeFahrenheit(event) {
