@@ -1,4 +1,4 @@
-/// Time
+/// Time, day
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -40,17 +40,21 @@ function forecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2">
-  <div class="day_future">${formatDayFuture(forecastDays.dt)}</div>
-            <img src="http://openweathermap.org/img/wn/${
+        <div class="card mb-3 bg-transparent border-primary" style="max-width: 7rem;">
+  <div class="day_future card-header border-primary">${formatDayFuture(
+    forecastDays.dt
+  )}</div>
+            <img id="icon_future" src="http://openweathermap.org/img/wn/${
               forecastDays.weather[0].icon
             }@2x.png" alt="" width="40"> 
-           <div class="temperature_future"> 
+           <div class="temperature_future "> 
             <span class="temperature_future_max">${Math.round(
               forecastDays.temp.max
-            )}°</span> 
+            )}°</span>    
             <span class="temperature_future_min">${Math.round(
               forecastDays.temp.min
             )}°</span> 
+            </div>
             </div>
             </div>
   `;
@@ -62,10 +66,7 @@ function forecast(response) {
 }
 
 
-
-
-///  Weather, icon
-
+///  Weather, icon, description
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "79ecd77b9336a83dd439bcbfd2adb260";
@@ -103,6 +104,7 @@ function temperature(response) {
   getForecast(response.data.coord);
 }
 
+/// Search
 function search(city) {
   let apiKey = "79ecd77b9336a83dd439bcbfd2adb260";
   let units = "metric";
@@ -116,8 +118,42 @@ function currentSity(event) {
   let citySearchElement = document.querySelector("#city");
   search(citySearchElement.value);
 }
+ 
+let city = document.querySelector("#city_search");
+city.addEventListener("submit", currentSity);
 
-/// Fahr/Cels
+search("Sydney");
+
+
+///Current position
+function showPosition(position) {
+  let apiKey = "79ecd77b9336a83dd439bcbfd2adb260";
+  let units = "metric";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+
+  axios.get(`${apiUrl}`).then(temperature);
+}
+
+
+function getTemp(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let button = document.querySelector(".searchGeo");
+button.addEventListener("click", getTemp);
+
+
+
+
+
+
+
+
+
+ /*Fahr/Cels
 
 function changeFahrenheit(event) {
   event.preventDefault();
@@ -139,36 +175,11 @@ function changeCelsius(event) {
 let celsiusTemperature = null;
 
 
-
-
-let city = document.querySelector("#city_search");
-city.addEventListener("submit", currentSity);
-
 let fahrenheit = document.querySelector("#icon_fahrenheit");
 fahrenheit.addEventListener("click", changeFahrenheit);
 
 let celsius = document.querySelector("#icon_celsius");
-celsius.addEventListener("click", changeCelsius);
-
-search("Sydney");
-
-/*Поточна геопозиція
-
-function showPosition(position) {
-  let apiKey = "79ecd77b9336a83dd439bcbfd2adb260";
-  let units = "metric";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-
-  axios.get(`${apiUrl}`).then(temperature);
-}
+celsius.addEventListener("click", changeCelsius);*/
 
 
-function getTemp(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
 
-let button = document.querySelector(".searchGeo");
-button.addEventListener("click", getTemp);*/

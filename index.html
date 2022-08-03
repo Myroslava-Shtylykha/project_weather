@@ -5,171 +5,102 @@
     <meta charset="UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-    crossorigin="anonymous">
-   <link href="https://fonts.googleapis.com/css2?family=Arima:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
-<div class="container">
-        <form id="city_search">
-            <label>
-                <input type="text" placeholder="Enter a city" autocomplete="off" id="city" />
-                <input type="submit" value="Go" class="search" />
-                <input type="submit" value="Current" class="searchGeo" />
-            </label>
-        </form>
-<div class="current_data">
-    <div class="current_city">
-        <h1 id="city_now">
-            Sydney
-        </h1>
-    </div> 
-    <div class="degrees_now">
-            25
-    </div>
-    <div class="degree_icon">
-        <a href="#" id="icon_celsius" class="">°C</a> |
-        <a href="#" id="icon_fahrenheit">°F</a>
-    </div>
+    <div class="container">
+      <form id="city_search">
+        <label>
+          <input
+            type="text"
+            placeholder="Enter a city"
+            autocomplete="off"
+            id="city"
+          />
+          <input type="submit" value="Go" class="search" />
+          <input type="submit" value="Current" class="searchGeo" />
+        </label>
+      </form>
 
-    <p class="day_time">
-        Sunday 12:00
+      
+      <div class="current">
+      <div class="current_data">
+        <div class="current_city">
+          <h1 id="city_now"></h1>
+        </div>
+        <div class="degrees_now">25</div>
+        <div class="degree_icon">°C</div>
+
+        <p class="day_time">Sunday 12:00</p>
+        <div class="description"></div>
+      </div>
+
+      <div class="card_today">
+        <div class="row">
+          <div class="col-4">
+            <div class="card mb-3 bg-transparent border-primary" style="width: 9rem">
+              <div class="card-body">
+                <h5 class="card-title">Wind</h5>
+                <p class="card-text"><span id="wind_card"></span> m/s</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card mb-3 bg-transparent border-primary" style="width: 9rem">
+              <div class="card-body">
+                <h5 class="card-title">Pressure</h5>
+                <p class="card-text"><span id="pressure_card"></span> Pa</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card mb-3 bg-transparent border-primary" style="width: 9rem">
+              <div class="card-body">
+                <h5 class="card-title">Humidity</h5>
+                <p class="card-text"><span id="humidity_card"></span> %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+    </div>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="Clouds"
+          id="icon"
+        />
+      </div>
+
+      <br />
+
+      <div class="weather_future" >
+        <div class="date_future" id="forecast_future"></div>
+      </div>
+
+  </div>
+    <p class="github_Link">
+      This project was coded by Myroslava Shtylykha and is
+      <a href="https://github.com/Myroslava-Shtylykha/project_weather"
+        >open-source code on GitHub</a
+      >
     </p>
-    <div class="description"></div>
-</div>
-<div class="card_today">
- 
-    <div class="row">
-
-     <div class="col-4">
-            <div class="card" style="width: 9rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Wind</h5>
-                    <p class="card-text"><span id="wind_card"></span> m/s</p>
-                </div> 
-            </div>
-        </div>
-
-                
-        <div class="col-4">
-            <div class="card" style="width: 9rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Pressure</h5>
-                    <p class="card-text"><span id="pressure_card"></span> Pa</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="card" style="width: 9rem;">
-                <div class="card-body">
-                     <h5 class="card-title">Humidity</h5>
-                     <p class="card-text"> <span id="humidity_card"></span> %</p>
-                </div>
-            </div>
-        </div>
-  </div>
-  </div>
-   <div>
-    <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Clouds" id="icon">
-   </div>
-
-
-  <br />
- 
-  <div class="weather_future">
-    <div class="date_future" id="forecast_future"></div>
-  </div>
- 
-
-  <!-- <div class="card_future">
-  
-    <div class="row">
-
-         <div class="col-2">
-            <div class="card border-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Mon</div>
-                    <div class="card-body text-info">
-                    <h5 class="card-title">25°C</h5>
-                    <p class="card-text">Wind 4 m/s<br />
-                    UV 5<br />
-                    Humidly 55%
-                    </p>
-                </div>
-            </div>
-         </div>
-
-         <div class="col-2">
-            <div class="card border-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Tue</div>
-                    <div class="card-body text-info">
-                    <h5 class="card-title">22°C</h5>
-                    <p class="card-text">Wind 4 m/s<br />
-                    UV 4<br />
-                    Humidly 65%
-                    </p>
-                </div>
-            </div>
-         </div>
-
-         <div class="col-2">
-            <div class="card border-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Wed</div>
-                    <div class="card-body text-info">
-                    <h5 class="card-title">27°C</h5>
-                    <p class="card-text">Wind 2 m/s<br />
-                    UV 7<br />
-                    Humidly 48%
-                    </p>
-                </div>
-            </div>
-         </div>
-
-         <div class="col-2">
-            <div class="card border-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Thur</div>
-                    <div class="card-body text-info">
-                    <h5 class="card-title">29°C</h5>
-                    <p class="card-text">Wind 1 m/s<br />
-                    UV 7<br />
-                    Humidly 45%
-                    </p>
-                </div>
-            </div>
-         </div>
-
-         <div class="col-2">
-            <div class="card border-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Fri</div>
-                    <div class="card-body text-info">
-                    <h5 class="card-title">28°C</h5>
-                    <p class="card-text">Wind 1 m/s<br />
-                    UV 7<br />
-                    Humidly 47%
-                    </p>
-                </div>
-            </div>
-         </div>
-
-         <div class="col-2">
-            <div class="card border-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Sat</div>
-                    <div class="card-body text-info">
-                    <h5 class="card-title">31°C</h5>
-                    <p class="card-text">Wind 0.5 m/s<br />
-                    UV 8<br />
-                    Humidly 39%
-                    </p>
-                </div>
-            </div>
-         </div> -->
-
-</div>  
-<p class="github_Link">This project was coded by Myroslava Shtylykha and is
-    <a href="https://github.com/Myroslava-Shtylykha/project_weather">open-source code on GitHub</a>
-</p>
     <script src="src/index.js"></script>
   </body>
 </html>
+
+
+
+
+      

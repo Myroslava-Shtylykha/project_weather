@@ -1,11 +1,10 @@
 
 .container {
-    /*background: radial-gradient(circle at 10% 20%, rgb(148, 241, 246) 0%, rgb(148, 189, 246) 100.7%);*/
     border-radius: 15px;
     font-family: 'Arima', cursive;
     background-image: url(../img/sky7.jpg);
-   
-}
+    height: 490px;
+   }
 
 form {
     margin: 30px;
@@ -18,12 +17,15 @@ form {
     border-color: rgb(146, 185, 236);
 }
 
+.current {
+    margin-top: -20px;
+}
 .current_data {
     margin-bottom: -110px;
 }
 
 .current_city {
-     color: rgb(7, 118, 203);
+    color: rgb(7, 118, 203);
     font-size: 120px;
     margin-left: 40px;
 }
@@ -34,10 +36,11 @@ form {
     margin-left: 40px;
 }
 
-.degree_icon {
-     color: rgb(7, 118, 203);
+.degree_icon { 
      font-size: 20px;
-     margin: -60px 30px 35px 95px;
+     margin: -60px 30px 35px 90px;
+     color: rgb(7, 118, 203);
+     text-decoration: none;
 }
 
 .search, .searchGeo {
@@ -58,12 +61,14 @@ form {
 .card_today {
     position:relative;
     margin-top: -80px;
-    margin-left: 400px;
+    margin-left: 360px;
 }
 
 .weather_future {
     text-align: center;
     margin-left: -30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -71,17 +76,18 @@ form {
     opacity: 0.5;
 }
 
-.col-2  {
-    text-align: center;
+.temperature_future {
+    padding-bottom: 15px;
 }
 
 .col-4  {
     text-align: center;
 }
 
-.text-info .card-title {
+.card-title {
     color: rgb(7, 118, 203);
 }
+
 
 .day_time, .description {
     margin-left: 40px;
@@ -89,13 +95,11 @@ form {
     font-size: 18px;
 }
 
-#icon_celsius, #icon_fahrenheit {
-    text-decoration: none;
-}
-
 .github_Link {
     font-size: 12px;
     color: rgb(63, 117, 147);
+    margin-left: 50px;
+    margin-top: -20px;
 }
 .github_Link a {
      color: rgb(0, 166, 199);
@@ -108,7 +112,17 @@ form {
     width: 130px;
 }
 
-.degree_icon, .active {
-    color: #212529;
-    cursor: default;
+.card {
+    margin-left: 44px;
+  }
+
+
+#icon_future {
+    margin: 0 auto;
+}
+
+
+.col-2 .card .day_future{
+    color: rgb(7, 118, 203);
+    font-weight: bold;
 }
