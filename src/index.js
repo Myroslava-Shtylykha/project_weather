@@ -122,7 +122,7 @@ function currentSity(event) {
 let city = document.querySelector("#city_search");
 city.addEventListener("submit", currentSity);
 
-search("Sydney");
+search("Prague");
 
 
 ///Current position
